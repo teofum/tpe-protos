@@ -13,11 +13,11 @@ OBJECTS=$(foreach I,$(notdir $(SOURCES:.c=.o)),$(OUT_DIR)/$I)
 # Make all targets in the docker container
 # This is the default target for convenience, to build locally use "make all"
 remote:
-	docker compose run -q --rm dev make all
+	docker compose run -q --rm --user "$(id -u):$(id -g)" dev make all
 
 # Run in the docker container
 run_remote:
-	docker compose run -q --rm dev make run
+	docker compose run -q --rm --user "$(id -u):$(id -g)" dev make run
 
 all: $(OUTPUT)
 
