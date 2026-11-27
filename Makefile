@@ -1,6 +1,6 @@
 LD=gcc
 GCC=gcc
-GCCFLAGS=-std=c11 -Wall -pedantic -Wno-missing-braces -Werror
+GCCFLAGS=-std=gnu11 -Wall -pedantic -Wno-missing-braces -Werror
 
 SRC_DIR=src
 OUT_DIR=out
