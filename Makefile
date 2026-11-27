@@ -29,7 +29,7 @@ run:
 # Run tests in the docker container
 test:
 	docker compose run -q --rm --user "$(id -u):$(id -g)" dev make build_tests
-	docker compose run -q --rm --user "$(id -u):$(id -g)" dev ./test.sh
+	docker compose run -q --rm --user "$(id -u):$(id -g)" dev .script/test.sh
 
 build_tests: $(TEST_BINARIES)
 
