@@ -34,7 +34,8 @@ struct state_machine {
   const struct state_definition *current;
 };
 
-struct selector_key *key;
+// TODO use this typedef
+typedef struct selector_key *pselector_key;
 
 /**
  * definición de un estado de la máquina de estados
