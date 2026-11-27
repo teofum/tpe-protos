@@ -4,6 +4,7 @@
 #include <assert.h> // :)
 #include <errno.h>  // :)
 #include <pthread.h>
+#include <signal.h>
 #include <stdio.h>  // perror
 #include <stdlib.h> // malloc
 #include <string.h> // memset
@@ -12,7 +13,6 @@
 #include <fcntl.h>
 #include <stdint.h> // SIZE_MAX
 #include <sys/select.h>
-#include <sys/signal.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <unistd.h>

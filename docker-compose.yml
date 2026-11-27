@@ -1,0 +1,31 @@
+name: "tpe-protos-dev"
+
+networks:
+  tpe-protos-dev:
+    attachable: true
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+    driver: "bridge"
+    name: "tpe-protos-dev"
+
+services:
+  dev:
+    build: .
+    env_file:
+      - path: ".env"
+        required: false
+    develop:
+      watch:
+        - action: rebuild
+          path: ".docker/"
+    networks:
+      tpe-protos-dev:
+        aliases:
+          - "dev.tpe-protos"
+    user: "ubuntu:ubuntu"
+    volumes:
+      - ".:/home/ubuntu/tpe-protos"
+    working_dir: "/home/ubuntu/tpe-protos"
+    ports:
+      - "1080:1080"
+      - "8080:8080"
