@@ -1,0 +1,19 @@
+name: "tpe-protos-dev"
+
+services:
+  dev:
+    build: .
+    env_file:
+      - path: ".env"
+        required: false
+    develop:
+      watch:
+        - action: rebuild
+          path: ".docker/"
+    user: "ubuntu:ubuntu"
+    volumes:
+      - ".:/home/ubuntu/tpe-protos"
+    working_dir: "/home/ubuntu/tpe-protos"
+    ports:
+      - "1080:1080"
+      - "8080:8080"
